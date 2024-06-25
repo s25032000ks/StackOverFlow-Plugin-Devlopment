@@ -2,6 +2,7 @@ plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.9.23"
     id("org.jetbrains.intellij") version "1.17.2"
+    id ("org.sonarqube") version "3.5.0.2730"
 }
 
 group = "com.example"
@@ -9,6 +10,12 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+}
+
+sonar {
+  properties {
+    property "sonar.projectKey", "netconf"
+  }
 }
 
 // Configure Gradle IntelliJ Plugin
